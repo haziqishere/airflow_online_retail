@@ -42,6 +42,12 @@ Deploy Your Project to Astronomer
 
 If you have an Astronomer account, pushing code to a Deployment on Astronomer is simple. For deploying instructions, refer to Astronomer documentation: https://www.astronomer.io/docs/astro/deploy-code/
 
+About this Project:
+=================================
+airflow tasks test retail upload_csv_to_gcs 2023-01-01
+airflow tasks test retail create_retail_dataset 2023-01-01
+airflow tasks test retail gcs_to_raw 2023-01-01
+
 Contact
 =======
 
