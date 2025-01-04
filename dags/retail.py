@@ -47,5 +47,12 @@ def retail():
         use_native_support=True
     )
 
+    @task.external_python(python='/usr/local/airflow/soda_venv/bin/python')
+    def check_load(scan_name='check_load', checks_subpath='sources'):
+        import sys
+        sys.path.append('/user/local/airflow')
+        from include.soda.check_function import check
+        return check(scan_name, checks_subpath)
+    check_load()
 
 retail()

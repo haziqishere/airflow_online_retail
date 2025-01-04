@@ -1,14 +1,14 @@
--- include/soda/configuration.yml
 data_source retail:
   type: bigquery
   connection:
     account_info_json_path: /usr/local/airflow/include/gcp/service_account.json
     auth_scopes:
-    - https://www.googleapis.com/auth/bigquery
-    - https://www.googleapis.com/auth/cloud-platform
-    - https://www.googleapis.com/auth/drive
+      - https://www.googleapis.com/auth/bigquery
+      - https://www.googleapis.com/auth/cloud-platform
+      - https://www.googleapis.com/auth/drive
     project_id: 'marine-shell-446808-b3'
     dataset: retail
+
 soda_cloud:
   host: cloud.soda.io
   api_key_id: 402dd56c-cb45-4b39-938e-6ecde7ebe627

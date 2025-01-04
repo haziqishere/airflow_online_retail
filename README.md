@@ -44,9 +44,16 @@ If you have an Astronomer account, pushing code to a Deployment on Astronomer is
 
 About this Project:
 =================================
+Testing each tasks:
 airflow tasks test retail upload_csv_to_gcs 2023-01-01
 airflow tasks test retail create_retail_dataset 2023-01-01
 airflow tasks test retail gcs_to_raw 2023-01-01
+
+Checking data quality types:
+soda scan -d retail -c include/soda/configuration.yml include/soda/checks/sources/raw_invoices.yml
+
+First data quality check in place
+airflow tasks test retail check_load 2023-01-01
 
 Contact
 =======
