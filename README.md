@@ -2,7 +2,7 @@
 
 Welcome to the Airflow Online Retail Project! This project demonstrates a data pipeline using Apache Airflow, Google Cloud BigQuery, and Metabase for data visualization. Below is an overview of the data pipeline.
 
-![Pipeline Flow Overview](pictures/pipeline_flow_overview_drawn.png)
+![Pipeline Flow Overview](README pictures/pipeline_flow_overview_drawn.png)
 
 # Project Contents
 
@@ -44,13 +44,13 @@ If you have an Astronomer account, pushing code to a Deployment on Astronomer is
 
 Below is the data model schema for the dimension and fact tables.
 
-![Data Model Schema](pictures/data_model_schema.png)
+![Data Model Schema](README pictures/data_model_schema.png)
 
 # Pipeline Flow in Airflow
 
 Here is a screenshot of the successful pipeline flows in Apache Airflow.
 
-![Pipeline Flow Successful](pictures/pipeline_flow_successful_from_airflow.png)
+![Pipeline Flow Successful](README pictures/pipeline_flow_successful_from_airflow.png)
 
 # Generated Dashboard
 
@@ -62,7 +62,7 @@ The dashboard below is generated using Metabase and connects directly to Google 
 
 This screenshot shows the BigQuery UI after all the tables have been created, including fact, dimensional, and report tables.
 
-![BigQuery UI](pictures/BigQuery_screenshoot.png)
+![BigQuery UI](README pictures/BigQuery_screenshoot.png)
 
 # Important Commands
 
@@ -103,10 +103,11 @@ dbt run --select path:models/report --profiles-dir /usr/local/airflow/include/db
 
 # Tech Stack
 
-- ![Docker](https://www.docker.com/sites/default/files/d8/2019-07/Moby-logo.png) **Docker**
-- ![Apache Airflow](https://airflow.apache.org/docs/apache-airflow/stable/_images/pin_large.png) **Apache Airflow**
-- ![Google Cloud BigQuery](https://upload.wikimedia.org/wikipedia/commons/5/5f/Google_Cloud_BigQuery_Logo.png) **Google Cloud BigQuery**
-- ![Astro](https://www.astronomer.io/img/brand/astro-logo-dark.png) **Astro**
-- ![Metabase](https://www.metabase.com/images/logo.svg) **Metabase**
-- ![Soda Core](https://soda.io/wp-content/uploads/2021/05/soda-logo.png) **Soda Core**
-- ![dbt](https://docs.getdbt.com/img/dbt-logo.svg) **dbt (Data Build Tool)**
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-017CEE?style=for-the-badge&logo=Apache%20Airflow&logoColor=white)
+![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![dbt](https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white)
+![Metabase](https://img.shields.io/badge/Metabase-509EE3?style=for-the-badge&logo=metabase&logoColor=fff)
+![Soda](https://img.shields.io/badge/Soda-0C344B?style=for-the-badge&logo=soda&logoColor=fff)
