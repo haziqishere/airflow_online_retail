@@ -55,6 +55,13 @@ soda scan -d retail -c include/soda/configuration.yml include/soda/checks/source
 First data quality check in place
 airflow tasks test retail check_load 2023-01-01
 
+Transformation
+astro dev bash
+source /usr/local/airflow/dbt_venv/bin/activate
+cd include/dbt 
+dbt deps
+dbt run --profiles-dir /usr/local/airflow/include/dbt/
+
 Contact
 =======
 

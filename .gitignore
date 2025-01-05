@@ -12,3 +12,8 @@ airflow.db
 
 # Ignore GCP service account credentials
 include/gcp/service_account.json
+service_account.json
+
+# Ignore everything in dbt_packages and logs
+include/dbt/dbt_packages/
+include/dbt/logs/
