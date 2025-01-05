@@ -102,6 +102,14 @@ dbt deps
 dbt run --profiles-dir /usr/local/airflow/include/dbt/
 ```
 
+Example of DBT Quality Check at Source Level:
+```sh
+cd include/dbt 
+dbt deps
+dbt test --select source:retail.raw_invoices
+dbt source freshness --select source:retail.raw_invoices
+```
+
 Quality Check and Report:
 ```sh
 astro dev bash
