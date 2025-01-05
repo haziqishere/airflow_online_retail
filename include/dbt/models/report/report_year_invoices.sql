@@ -6,11 +6,11 @@ SELECT
 FROM
     {{ ref('fct_invoices') }} AS fi
 JOIN
-    {{ ref('dim_datetime') }} AS dt 
+    {{ ref('dim_datetime') }} AS dt
     ON fi.datetime_id = dt.datetime_id
 GROUP BY
-    dt.year, 
+    dt.year,
     dt.month
 ORDER BY
-    dt.year, 
+    dt.year,
     dt.month;

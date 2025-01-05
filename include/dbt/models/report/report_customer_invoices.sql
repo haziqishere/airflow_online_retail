@@ -6,10 +6,10 @@ SELECT
 FROM
     {{ ref('fct_invoices') }} AS fi
 JOIN
-    {{ ref('dim_customer') }} AS c 
+    {{ ref('dim_customer') }} AS c
     ON fi.customer_id = c.customer_id
 GROUP BY
-    c.country, 
+    c.country,
     c.iso
 ORDER BY
     total_revenue DESC
