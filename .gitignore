@@ -17,3 +17,9 @@ service_account.json
 # Ignore everything in dbt_packages and logs
 include/dbt/dbt_packages/
 include/dbt/logs/
+
+# Ignore metabase
+include/metabase-data/
+
+#Ignore target
+include/dbt/target/

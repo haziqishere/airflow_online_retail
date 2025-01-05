@@ -29,7 +29,7 @@ def retail():
         dst='raw/online_retail.csv',
         bucket='haziq_online_retail',
         gcp_conn_id='gcp',
-        mime_type='text/csv'
+        mime_type='text/csv',
     )
 
     create_retail_dataset = BigQueryCreateEmptyDatasetOperator(
@@ -50,7 +50,7 @@ def retail():
             conn_id='gcp',
             metadata=Metadata(schema='retail')
         ),
-        use_native_support=True
+        use_native_support=False,
     )
 
     @task.external_python(python='/usr/local/airflow/soda_venv/bin/python')
@@ -88,8 +88,9 @@ def retail():
 
     @task.external_python(python='/usr/local/airflow/soda_venv/bin/python')
     def check_report(scan_name='check_report', checks_subpath='report'):
-        from include.soda.check_report import check
-
+        import sys
+        sys.path.append('/usr/local/airflow')
+        from include.soda.check_function import check
         return check(scan_name, checks_subpath)
 
     chain(

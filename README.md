@@ -62,6 +62,13 @@ cd include/dbt
 dbt deps
 dbt run --profiles-dir /usr/local/airflow/include/dbt/
 
+Quality Check and Report
+astro dev bash
+source /usr/local/airflow/dbt_venv/bin/activate
+cd include/dbt 
+dbt deps
+dbt run --select path:models/report --profiles-dir /usr/local/airflow/include/dbt/
+
 Contact
 =======
 
