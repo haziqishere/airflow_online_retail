@@ -1,11 +1,11 @@
 [sqlfluff]
 templater = dbt
 dialect = bigquery  # Use your database dialect (e.g., postgres, snowflake)
-exclude_rules = L009,L031,AM05,TMP  # Exclude rules you want to skip
+exclude_rules = L009,L031  # Exclude rules you want to skip
 
 [sqlfluff:templater:dbt]
 profiles_dir = ~/.dbt  # Path to your dbt profiles directory
 profile = default  # Your dbt profile name
 
 [sqlfluff:rules]
-max_line_length = 120
+max_line_length = 500
