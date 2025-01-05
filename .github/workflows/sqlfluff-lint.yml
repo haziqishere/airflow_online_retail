@@ -5,6 +5,8 @@ on:
     branches:
       - main
   pull_request:
+    branches:
+      - main
 
 jobs:
   lint:
@@ -14,16 +16,33 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Clear the Python pip cache to ensure fresh installations
+      - name: Clear pip cache
+        run: pip cache purge
+
+      # Set up Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.9
 
+      # Cache Python dependencies to speed up builds
+      - name: Cache Python dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      # Install SQLFluff and dbt-templater
       - name: Install SQLFluff
         run: |
           pip install sqlfluff
           pip install sqlfluff-templater-dbt
 
+      # Run SQLFluff linting
       - name: Run SQLFluff linting
         env:
           DBT_PROFILES_DIR: ${{ github.workspace }}/.dbt
