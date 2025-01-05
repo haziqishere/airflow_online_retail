@@ -5,5 +5,5 @@ exclude_rules = L009, L031  # Exclude specific rules if necessary
 max_line_length = 500  # Set maximum line length to 500 characters
 
 [sqlfluff:templater:dbt]
-profiles_dir = /path/to/your/dbt/profiles  # Adjust to your profiles directory
+profiles_dir = include/dnt/  # Adjust to your profiles directory
 profile = default  # Your dbt profile name
