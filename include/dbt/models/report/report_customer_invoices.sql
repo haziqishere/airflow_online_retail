@@ -12,5 +12,5 @@ GROUP BY
     c.country,
     c.iso
 ORDER BY
-    total_revenue DESC
+    SUM(fi.total) DESC
 LIMIT 10;

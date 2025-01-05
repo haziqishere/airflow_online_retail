@@ -13,5 +13,5 @@ GROUP BY
     p.stock_code,
     p.description
 ORDER BY
-    total_quantity_sold DESC
+    SUM(fi.quantity) DESC
 LIMIT 10;
