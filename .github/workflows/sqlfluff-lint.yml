@@ -34,4 +34,4 @@ jobs:
         env:
           DBT_PROFILES_DIR: ${{ github.workspace }}/.dbt
         run: |
-          sqlfluff lint models --dialect bigquery --config .sqlfluff
+          sqlfluff lint models --dialect bigquery --config include/dbt/.sqlfluff
