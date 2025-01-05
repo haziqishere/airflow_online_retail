@@ -1,6 +1,6 @@
 -- report_customer_invoices.sql
 SELECT
-  c.country,
+  c.country
   c.iso,
   COUNT(fi.invoice_id) AS total_invoices,
   SUM(fi.total) AS total_revenue
