@@ -7,4 +7,30 @@ sources:
 
     tables:
       - name: raw_invoices
+        columns:
+          - name: InvoiceNo
+            tests:
+              - unique
+              - not_null
+          - name: InvoiceDate
+            tests:
+              - not_null
+          - name: UnitPrice
+            tests:
+              - not_null
+          - name: CustomerID
+            tests:
+              - not_null
+          - name: Country
+            tests:
+              - not_null
+        freshness:
+          warn_after:
+            count: 3
+            period: hour
+          error_after:
+            count: 5
+            period: hour
+        loaded_at_field: InvoiceDate
+
       - name: country
