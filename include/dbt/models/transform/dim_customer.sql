@@ -3,16 +3,16 @@ WITH customer_cte AS (
     SELECT DISTINCT
         {{ dbt_utils.generate_surrogate_key(['CustomerID', 'Country']) }} AS customer_id,
         Country AS country
-    FROM 
+    FROM
         {{ source('retail', 'raw_invoices') }}
-    WHERE 
+    WHERE
         CustomerID IS NOT NULL
 )
 SELECT
     t.*,
     cm.iso
-FROM 
+FROM
     customer_cte AS t
-LEFT JOIN 
+LEFT JOIN
     {{ source('retail', 'country') }} AS cm 
     ON t.country = cm.nicename;

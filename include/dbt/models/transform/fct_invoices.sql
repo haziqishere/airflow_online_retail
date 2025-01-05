@@ -7,9 +7,9 @@ WITH fct_invoices_cte AS (
         {{ dbt_utils.generate_surrogate_key(['CustomerID', 'Country']) }} AS customer_id,
         Quantity AS quantity,
         Quantity * UnitPrice AS total
-    FROM 
+    FROM
         {{ source('retail', 'raw_invoices') }}
-    WHERE 
+    WHERE
         Quantity > 0
 )
 SELECT
@@ -19,7 +19,7 @@ SELECT
     dc.customer_id,
     fi.quantity,
     fi.total
-FROM 
+FROM
     fct_invoices_cte fi
 INNER JOIN {{ ref('dim_datetime') }} dt ON fi.datetime_id = dt.datetime_id
 INNER JOIN {{ ref('dim_product') }} dp ON fi.product_id = dp.product_id

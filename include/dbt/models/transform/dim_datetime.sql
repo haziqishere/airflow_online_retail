@@ -12,9 +12,9 @@ WITH datetime_cte AS (
       ELSE
         NULL
     END AS date_part
-  FROM 
+  FROM
     {{ source('retail', 'raw_invoices') }}
-  WHERE 
+  WHERE
     InvoiceDate IS NOT NULL
 )
 SELECT
@@ -26,5 +26,5 @@ SELECT
   EXTRACT(HOUR FROM date_part) AS hour,
   EXTRACT(MINUTE FROM date_part) AS minute,
   EXTRACT(DAYOFWEEK FROM date_part) AS weekday
-FROM 
+FROM
   datetime_cte;

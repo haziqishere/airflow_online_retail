@@ -4,8 +4,8 @@ SELECT
     StockCode AS stock_code,
     Description AS description,
     UnitPrice AS price
-FROM 
+FROM
     {{ source('retail', 'raw_invoices') }}
-WHERE 
+WHERE
     StockCode IS NOT NULL
     AND UnitPrice > 0;
