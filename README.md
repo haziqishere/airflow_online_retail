@@ -66,7 +66,7 @@ Here is a screenshot of the successful pipeline flows in Apache Airflow.
 
 The dashboard below is generated using Metabase and connects directly to Google Cloud BigQuery.
 
-!Dashboard
+![Dashboard](README%20pictures/dashboard.png)
 
 # BigQuery UI
 
