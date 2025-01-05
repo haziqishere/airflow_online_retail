@@ -11,28 +11,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Set up Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.9
 
-      # Step 3: Install dependencies
       - name: Install SQLFluff
         run: |
           pip install sqlfluff
           pip install sqlfluff-templater-dbt
 
-      # Step 4: Run SQLFluff lint
       - name: Run SQLFluff linting
+        env:
+          DBT_PROFILES_DIR: ${{ github.workspace }}/.dbt
         run: |
-          sqlfluff lint include/dbt/models/
-          
-      # Step 5: (Optional) Fail if linting issues are found
-      - name: Enforce SQLFluff standards
-        run: |
-          sqlfluff lint include/dbt/models/ --exit-code
+          sqlfluff lint include/dbt/models/ --dialect bigquery
