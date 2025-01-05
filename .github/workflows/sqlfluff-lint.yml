@@ -30,9 +30,9 @@ jobs:
       # Step 4: Run SQLFluff lint
       - name: Run SQLFluff linting
         run: |
-          sqlfluff lint models/
+          sqlfluff lint include/dbt/models/
           
       # Step 5: (Optional) Fail if linting issues are found
       - name: Enforce SQLFluff standards
         run: |
-          sqlfluff lint models/ --exit-code
+          sqlfluff lint include/dbt/models/ --exit-code
