@@ -3,4 +3,3 @@ templater = dbt
 dialect = bigquery  # Use your database dialect (e.g., postgres, snowflake)
 exclude_rules = L009,L031  # Exclude rules you want to skip
 max_line_length = 500  # Optional: Set max line length
-
